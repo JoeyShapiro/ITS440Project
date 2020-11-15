@@ -1,9 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ClmhIpwuwkcc13X7SQejsLwl2z+XWdTfLzrlIfQ68oq6xXTLrj1qAJd66eXb3xOY0BE50C3a1GLZZtUeXrtJDQ==",
+  "dgSpecHash": "DaIsTIyC5xRURVnOTngWi5JRdFQV+lLowIYe/EpIX3nAvLpOcWM0SIQajHfHy/SdYr/FlBoK5pqkveWDhw06hg==",
   "success": true,
   "projectFilePath": "C:\\Users\\joeya\\source\\repos\\JoeyShapiro\\ITS440Project\\ITS440Proj\\ITS440Proj\\ITS440Proj.iOS\\ITS440Proj.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joeya\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.3\\sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
   ],

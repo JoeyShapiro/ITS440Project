@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS440Proj.PageShoppingList">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <!-- list for shopping list -->
+            <ListView x:Name="listShopping">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- each item in the list -->
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1" x:Name="listShopButton" />
+                                <Label Grid.Column="2" x:Name="listShopTitle" Text="{Binding Title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                                <Label Grid.Column="3" Text="{Binding Description}" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="4" Text="{Binding Quantity}" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

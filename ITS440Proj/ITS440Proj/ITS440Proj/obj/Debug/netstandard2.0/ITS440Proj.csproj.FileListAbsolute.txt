@@ -1,0 +1,14 @@
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\bin\Debug\netstandard2.0\ITS440Proj.deps.json
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\bin\Debug\netstandard2.0\ITS440Proj.dll
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\bin\Debug\netstandard2.0\ref\ITS440Proj.dll
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\bin\Debug\netstandard2.0\ITS440Proj.pdb
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.csprojAssemblyReference.cache
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.AssemblyInfoInputs.cache
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.AssemblyInfo.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.dll
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ref\ITS440Proj.dll
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.pdb
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.csproj.CoreCompileInputs.cache
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\XamlC.stamp
