@@ -15,3 +15,5 @@ C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS4
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageShoppingList.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageShoppingAdd.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\TabbedPageList.xaml.g.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageDiscover.xaml.g.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageRecipe.xaml.g.cs

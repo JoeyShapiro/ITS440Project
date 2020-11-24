@@ -30,6 +30,7 @@ namespace ITS440Proj
             entryFood.Text = item.Title;
             entryDescription.Text = item.Description;
             entryQuantity.Text = item.Quantity.ToString();
+            pickerAmount.SelectedIndex = 1;
 
             buttunSave.Clicked += async (sender, e) =>
             {
