@@ -6,10 +6,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using SQLite;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace ITS440Proj
 {
-    class MVVM
+    public class MVVM
     {
         public class Item
         {
@@ -56,6 +57,10 @@ namespace ITS440Proj
             public int ID { get; set; }
             public event PropertyChangedEventHandler PropertyChanged;
             Item item;
+
+            // custom added
+            public int Quantity { get; set; }
+            public bool Got { get; set; }
 
             public ObservableItem()
             {
@@ -107,8 +112,8 @@ namespace ITS440Proj
             {
                 Task.Run(async () =>
                 {
-                    //var table = await App.Database.GetItemsAsync();
-                    //items = new ObservableCollection<ObservableItem>(table);
+                    var table = await App.Database.GetItemsAsync();
+                    items = new ObservableCollection<ObservableItem>(table);
                 }).Wait();
             }
 
@@ -125,6 +130,30 @@ namespace ITS440Proj
                 {
                     return items;
                 }
+            }
+
+            public MyEnumerator GetEnumerator()
+            {
+                return new MyEnumerator(this);
+            }
+
+            public class MyEnumerator
+            {
+                int nIndex;
+                ListViewModel collection;
+                public MyEnumerator(ListViewModel coll)
+                {
+                    collection = coll;
+                    nIndex = -1;
+                }
+
+                public bool MoveNext()
+                {
+                    nIndex++;
+                    return (nIndex < collection.items.Count); // should be .Length but well see
+                }
+
+                public ObservableItem Current => collection.items.Where(X => X.ID == nIndex).FirstOrDefault();
             }
         }
     }

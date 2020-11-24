@@ -8,11 +8,15 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <!-- list for shopping list -->
-            <ListView x:Name="listShopping">
+            <ListView x:Name="listShopping" GroupDisplayBinding="{Binding LongName}" GroupShortNameBinding="{Binding ShortName}" IsGroupingEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!-- each item in the list -->
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                                <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
+                            </ViewCell.ContextActions>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20" />
@@ -20,7 +24,7 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
-                                <Button Grid.Column="1" x:Name="listShopButton" />
+                                <Button Grid.Column="1" x:Name="listShopButton" Text="Got" Clicked="listShopButton_Clicked" />
                                 <Label Grid.Column="2" x:Name="listShopTitle" Text="{Binding Title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
                                 <Label Grid.Column="3" Text="{Binding Description}" HorizontalOptions="FillAndExpand" FontSize="Body" />
                                 <Label Grid.Column="4" Text="{Binding Quantity}" HorizontalOptions="FillAndExpand" FontSize="Body" />
@@ -29,6 +33,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="buttonAdd" Text="Add Item" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

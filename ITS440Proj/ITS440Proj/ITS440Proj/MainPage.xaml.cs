@@ -13,6 +13,7 @@ namespace ITS440Proj
         public MainPage()
         {
             InitializeComponent();
+            Navigation.PushAsync(new PageShoppingList());
         }
     }
 }
