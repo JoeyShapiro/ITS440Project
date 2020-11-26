@@ -23,7 +23,7 @@ namespace ITS440Proj
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage()); // TODO MainPage = new TabbedPageList(); use this somehow but setup
+            MainPage = new NavigationPage(new TabbedPageList()); // TODO MainPage = new TabbedPageList(); use this somehow but setup
         }
 
         protected override void OnStart()

@@ -15,6 +15,11 @@ namespace ITS440Proj
         public PageRecipe()
         {
             InitializeComponent();
+
+            buttonAdd.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new PageRecipeView());
+            };
         }
     }
 }

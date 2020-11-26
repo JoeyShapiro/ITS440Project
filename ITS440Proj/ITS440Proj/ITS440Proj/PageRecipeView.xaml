@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS440Proj.PageRecipeView"
+             Title="View Recipe">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryIng" Placeholder="Ingrediant" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryAmount" Placeholder="Amount" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryUnit" Placeholder="Units" HorizontalOptions="FillAndExpand" /> <!-- PLACE HOLDER FOR SELECTION -->
+            <Button x:Name="buttonAddIng" Text="+" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryIns" Placeholder="Instruction Step" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="buttonAddIns" Text="+" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="buttonSave" Text="Save Recipe" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
