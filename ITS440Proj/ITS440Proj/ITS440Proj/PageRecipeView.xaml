@@ -10,10 +10,24 @@
                 HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entryIng" Placeholder="Ingrediant" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryAmount" Placeholder="Amount" HorizontalOptions="FillAndExpand" />
-            <Entry x:Name="entryUnit" Placeholder="Units" HorizontalOptions="FillAndExpand" /> <!-- PLACE HOLDER FOR SELECTION -->
+            <Picker x:Name="pickerAmount" Title="Units">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Units</x:String>
+                        <x:String>oz</x:String>
+                        <x:String>lbs</x:String> <!-- check if thing -->
+                        <x:String>cups</x:String>
+                        <x:String>tsp</x:String>
+                        <x:String>tbsp</x:String>
+                        <x:String>fl oz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker> <!-- PLACE HOLDER FOR SELECTION -->
             <Button x:Name="buttonAddIng" Text="+" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryIns" Placeholder="Instruction Step" HorizontalOptions="FillAndExpand" />
             <Button x:Name="buttonAddIns" Text="+" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryYield" Placeholder="Yield" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryTags" Placeholder="Search Tags" HorizontalOptions="FillAndExpand" />
             <Button x:Name="buttonSave" Text="Save Recipe" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>

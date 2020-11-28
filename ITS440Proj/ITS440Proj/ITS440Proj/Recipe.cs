@@ -1,12 +1,15 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
 namespace ITS440Proj
 {
-    class Recipe
+    public class Recipe
     {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; } // primary key
         public ObservableCollection<MVVM.ObservableItem> ingredients = new ObservableCollection<MVVM.ObservableItem>(); // TODO maybe make TypeGroup
         public ObservableCollection<string> instructions = new ObservableCollection<string>(); // TODO maybe make TypeGroup
         public string title; // title of recipe

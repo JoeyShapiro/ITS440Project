@@ -7,6 +7,7 @@ namespace ITS440Proj
     public partial class App : Application
     {
         static ProjectDatabase database;
+        static RecipeDatabase recipedb;
 
         public static ProjectDatabase Database
         {
@@ -17,6 +18,17 @@ namespace ITS440Proj
                     database = new ProjectDatabase();
                 }
                 return database;
+            }
+        }
+        public static RecipeDatabase Recipedb
+        {
+            get
+            {
+                if (recipedb == null)
+                {
+                    recipedb = new RecipeDatabase();
+                }
+                return recipedb;
             }
         }
         public App()
