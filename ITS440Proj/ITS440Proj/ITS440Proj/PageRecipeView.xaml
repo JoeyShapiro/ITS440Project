@@ -8,6 +8,7 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryTitle" Placeholder="Recipe Name" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryIng" Placeholder="Ingrediant" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryAmount" Placeholder="Amount" HorizontalOptions="FillAndExpand" />
             <Picker x:Name="pickerAmount" Title="Units">

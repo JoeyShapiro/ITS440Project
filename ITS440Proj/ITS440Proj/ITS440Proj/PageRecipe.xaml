@@ -8,6 +8,23 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entrySearch" Placeholder="Search" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="buttonSearch" Text="Go" HorizontalOptions="FillAndExpand" />
+            <!-- list for Recipe list -->
+            <ListView x:Name="listRecipes">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- each recipe in the list -->
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                                <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
+                                <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="Add" />
+                            </ViewCell.ContextActions>
+                            <Label x:Name="listRecipeTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button x:Name="buttonAdd" Text="Add Recipe" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
