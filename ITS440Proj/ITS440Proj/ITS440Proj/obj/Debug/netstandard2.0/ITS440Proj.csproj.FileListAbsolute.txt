@@ -10,11 +10,11 @@ C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS4
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.dll
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ref\ITS440Proj.dll
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.pdb
-C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.csproj.CoreCompileInputs.cache
-C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageShoppingList.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageShoppingAdd.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\TabbedPageList.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageDiscover.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageRecipe.xaml.g.cs
 C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\PageRecipeView.xaml.g.cs
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\ITS440Proj.csproj.CoreCompileInputs.cache
+C:\Users\joeya\source\repos\JoeyShapiro\ITS440Project\ITS440Proj\ITS440Proj\ITS440Proj\obj\Debug\netstandard2.0\XamlC.stamp

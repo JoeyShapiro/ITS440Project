@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DaIsTIyC5xRURVnOTngWi5JRdFQV+lLowIYe/EpIX3nAvLpOcWM0SIQajHfHy/SdYr/FlBoK5pqkveWDhw06hg==",
+  "dgSpecHash": "O3s6odxZcPOL52pbr4YqH7c4rplkefpa2EQpjaCDEUtZtFHiTOch6W546lF52TY8fXTNxGBwzhymgXyQm6m6CA==",
   "success": true,
   "projectFilePath": "C:\\Users\\joeya\\source\\repos\\JoeyShapiro\\ITS440Project\\ITS440Proj\\ITS440Proj\\ITS440Proj.iOS\\ITS440Proj.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joeya\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\joeya\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
+    "C:\\Users\\joeya\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
     "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",
     "C:\\Users\\joeya\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.3\\sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",

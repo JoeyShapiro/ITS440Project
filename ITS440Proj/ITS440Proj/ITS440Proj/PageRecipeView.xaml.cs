@@ -25,16 +25,17 @@ namespace ITS440Proj
             InitializeComponent();
 
             recipe = recipePass;
-
+            
             entryTitle.Text = recipe.title;
             entryYield.Text = recipe.yield;
-            foreach (var tag in recipe.tags) // clean
-            {
-                entryTags.Text += tag + ",";
-            }
-            entryIng.Text = recipe.ingredients.ToString();
-            entryIns.Text = recipe.instructions.ToString();
-
+            if(recipe.tags != null) // checks if list has values in it
+                foreach (var tag in recipe.tags) // clean
+                {
+                    entryTags.Text += tag + ",";
+                }
+            listIng.ItemsSource = recipe.ingredients;
+            listIns.ItemsSource = recipe.instructions;
+            
             buttonSave.Clicked += async (sender, e) =>
             {
                 if(entryTitle.Text != "" && entryTags.Text != "" && entryYield.Text != "")
@@ -66,6 +67,10 @@ namespace ITS440Proj
                 {
                     var ing = new MVVM.ObservableItem { Title = entryIng.Text, Description = "", Quantity = int.Parse(entryAmount.Text) }; // TODO maybe Food : ObservableItem
                     recipe.ingredients.Add(ing);
+
+                    entryIng.Text = "";
+                    entryAmount.Text = "";
+                    pickerAmount.SelectedIndex = -1;
                 }
             };
 
@@ -74,6 +79,8 @@ namespace ITS440Proj
                 if(entryIns.Text != null || entryIns.Text != "")
                 {
                     recipe.instructions.Add(entryIns.Text);
+
+                    entryIns.Text = "";
                 }
             };
         }
@@ -106,6 +113,26 @@ namespace ITS440Proj
                     }
                 }
             }
+        }
+
+        public void IngOnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var oi = (MVVM.ObservableItem)mi.CommandParameter;
+
+            recipe.ingredients.Remove(oi);
+
+            listIng.ItemsSource = recipe.ingredients;
+        }
+
+        public void InsOnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var oi = (string)mi.CommandParameter;
+
+            recipe.instructions.Remove(oi);
+
+            listIns.ItemsSource = recipe.instructions;
         }
     }
 }

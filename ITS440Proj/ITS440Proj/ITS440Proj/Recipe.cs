@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,11 +11,18 @@ namespace ITS440Proj
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; } // primary key
-        public ObservableCollection<MVVM.ObservableItem> ingredients = new ObservableCollection<MVVM.ObservableItem>(); // TODO maybe make TypeGroup
-        public ObservableCollection<string> instructions = new ObservableCollection<string>(); // TODO maybe make TypeGroup
+        [TextBlob("ingredientsBlobbed")]
+        public ObservableCollection<MVVM.ObservableItem> ingredients { get; set; } // TODO maybe make TypeGroup
+        [TextBlob("instructionsBlobbed")]
+        public ObservableCollection<string> instructions { get; set; } // TODO maybe make TypeGroup
         public string title { get; set; } // title of recipe
         public string yield { get; set; } // how many the recipe will make
-        public ObservableCollection<string> tags = new ObservableCollection<string>(); // list of tags for searching for the recipe
+        [TextBlob("tagsBlobbed")]
+        public ObservableCollection<string> tags { get; set; } // list of tags for searching for the recipe
+
+        public string ingredientsBlobbed { get; set; }
+        public string instructionsBlobbed { get; set; }
+        public string tagsBlobbed { get; set; }
 
         public Recipe()
         {
