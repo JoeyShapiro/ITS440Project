@@ -24,7 +24,7 @@ namespace ITS440Proj
 
             buttonAdd.Clicked += async (sender, e) =>
             {
-                recipe = new Recipe { title = "recipe", ingredients = new ObservableCollection<MVVM.ObservableItem>(), instructions = new ObservableCollection<string>(), tags = new ObservableCollection<string>(), yield = "1" };
+                recipe = new Recipe { title = "recipe", ingredientsBlobbed = "test@1\n", instructionsBlobbed = "test\n", tagsBlobbed = "", yield = "1" };
                 await App.Recipedb.InsertItemAsync(recipe); // creates a new row in the database
                 
                 await Navigation.PushAsync(new PageRecipeView(recipe));
@@ -83,6 +83,16 @@ namespace ITS440Proj
             var recipe = (Recipe)mi.CommandParameter;
 
             // add ing to list
+            var ingdeblob = recipe.ingredientsBlobbed.Split('\n'); // array of foods ( FOOD\n )
+            foreach (var item in ingdeblob)
+            {
+                if (item != "")
+                {
+                    var temp = item.Split('@'); // array of item vars ( Title@Quantity )
+                    var tempIng = new MVVM.ObservableItem { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]), Got = false};
+                    await App.Database.InsertItemAsync(tempIng);
+                }
+            }
 
             await DisplayAlert("Added To List", "The Ingredients for this recipe have been added to the shopping list.", "OK");
         }

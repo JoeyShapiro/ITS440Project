@@ -2,13 +2,65 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
-      "Newtonsoft.Json/9.0.1": {
+      "AWSSDK.CognitoIdentity/3.5.1.6": {
         "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.1.46, 3.6.0)",
+          "AWSSDK.SecurityToken": "[3.5.1.26, 3.6.0)"
+        },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/AWSSDK.CognitoIdentity.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/AWSSDK.CognitoIdentity.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.5.1.46": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.5.4.5": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.1.46, 3.6.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.DynamoDBv2.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.DynamoDBv2.dll": {}
+        }
+      },
+      "AWSSDK.SecurityToken/3.5.1.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.1.46, 3.6.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.SecurityToken.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.SecurityToken.dll": {}
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
       "sqlite-net-pcl/1.7.335": {
@@ -21,19 +73,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/SQLite-net.dll": {}
-        }
-      },
-      "SQLiteNetExtensions/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "sqlite-net-pcl": "1.4.118"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -115,6 +154,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
@@ -903,7 +951,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "SQLiteNetExtensions": "2.1.0",
+          "AWSSDK.CognitoIdentity": "3.5.1.6",
+          "AWSSDK.Core": "3.5.1.46",
+          "AWSSDK.DynamoDBv2": "3.5.4.5",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.6.0.1141",
           "sqlite-net-pcl": "1.7.335"
@@ -918,31 +968,146 @@
     }
   },
   "libraries": {
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
+    "AWSSDK.CognitoIdentity/3.5.1.6": {
+      "sha512": "4mRI4f9c4YS1Iw50+7Ebw7IA7ggA4gXgvnotG5Lw2CFQTCUz3wRRD96pyg7HmgEYdNUEQmMOPgXkkBn5zgziEA==",
       "type": "package",
-      "path": "newtonsoft.json/9.0.1",
+      "path": "awssdk.cognitoidentity/3.5.1.6",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.9.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll",
+        "awssdk.cognitoidentity.3.5.1.6.nupkg.sha512",
+        "awssdk.cognitoidentity.nuspec",
+        "lib/net35/AWSSDK.CognitoIdentity.dll",
+        "lib/net35/AWSSDK.CognitoIdentity.pdb",
+        "lib/net35/AWSSDK.CognitoIdentity.xml",
+        "lib/net45/AWSSDK.CognitoIdentity.dll",
+        "lib/net45/AWSSDK.CognitoIdentity.pdb",
+        "lib/net45/AWSSDK.CognitoIdentity.xml",
+        "lib/netcoreapp3.1/AWSSDK.CognitoIdentity.dll",
+        "lib/netcoreapp3.1/AWSSDK.CognitoIdentity.pdb",
+        "lib/netcoreapp3.1/AWSSDK.CognitoIdentity.xml",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.dll",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.pdb",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.xml",
+        "lib/netstandard2.0/AWSSDK.CognitoIdentity.dll",
+        "lib/netstandard2.0/AWSSDK.CognitoIdentity.pdb",
+        "lib/netstandard2.0/AWSSDK.CognitoIdentity.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Core/3.5.1.46": {
+      "sha512": "ZhN0fdozKvURNVWyt9O2jNplD9lTo0xcysRKjXbBrdfqk0t9osTvKp5BEdgAbReSnpK+7HaQPnE4rEBbEFt5ig==",
+      "type": "package",
+      "path": "awssdk.core/3.5.1.46",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.3.5.1.46.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard1.3/AWSSDK.Core.dll",
+        "lib/netstandard1.3/AWSSDK.Core.pdb",
+        "lib/netstandard1.3/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.DynamoDBv2/3.5.4.5": {
+      "sha512": "ja4qVhHPpnM+856xKX6CWpKuCvv4aNEt5DONTO7PtFkrFIdHVFLK8OonqWRBtsXB/B1C0CLjkXGGZOs9Uqsw7A==",
+      "type": "package",
+      "path": "awssdk.dynamodbv2/3.5.4.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.DynamoDBv2.CodeAnalysis.dll",
+        "awssdk.dynamodbv2.3.5.4.5.nupkg.sha512",
+        "awssdk.dynamodbv2.nuspec",
+        "lib/net35/AWSSDK.DynamoDBv2.dll",
+        "lib/net35/AWSSDK.DynamoDBv2.pdb",
+        "lib/net35/AWSSDK.DynamoDBv2.xml",
+        "lib/net45/AWSSDK.DynamoDBv2.dll",
+        "lib/net45/AWSSDK.DynamoDBv2.pdb",
+        "lib/net45/AWSSDK.DynamoDBv2.xml",
+        "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll",
+        "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.pdb",
+        "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.xml",
+        "lib/netstandard1.3/AWSSDK.DynamoDBv2.dll",
+        "lib/netstandard1.3/AWSSDK.DynamoDBv2.pdb",
+        "lib/netstandard1.3/AWSSDK.DynamoDBv2.xml",
+        "lib/netstandard2.0/AWSSDK.DynamoDBv2.dll",
+        "lib/netstandard2.0/AWSSDK.DynamoDBv2.pdb",
+        "lib/netstandard2.0/AWSSDK.DynamoDBv2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SecurityToken/3.5.1.26": {
+      "sha512": "eS50ofC/z5RXCBT/QprEpzboEoTcnpS37t+VCGeoAtZ1r/7PuG32tWEz3fLXtjn2QzJMmxch4fvxCcFKl0pqfg==",
+      "type": "package",
+      "path": "awssdk.securitytoken/3.5.1.26",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SecurityToken.CodeAnalysis.dll",
+        "awssdk.securitytoken.3.5.1.26.nupkg.sha512",
+        "awssdk.securitytoken.nuspec",
+        "lib/net35/AWSSDK.SecurityToken.dll",
+        "lib/net35/AWSSDK.SecurityToken.pdb",
+        "lib/net35/AWSSDK.SecurityToken.xml",
+        "lib/net45/AWSSDK.SecurityToken.dll",
+        "lib/net45/AWSSDK.SecurityToken.pdb",
+        "lib/net45/AWSSDK.SecurityToken.xml",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.xml",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.dll",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.pdb",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.xml",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.dll",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.pdb",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "sqlite-net-pcl/1.7.335": {
@@ -957,35 +1122,6 @@
         "lib/netstandard2.0/SQLite-net.xml",
         "sqlite-net-pcl.1.7.335.nupkg.sha512",
         "sqlite-net-pcl.nuspec"
-      ]
-    },
-    "SQLiteNetExtensions/2.1.0": {
-      "sha512": "oiyhVxCi7M2nr3tI6h05jdHGT0HKW6GxMNKUiO04zWAxv42MHtX12c4tW67w6VqGwcnXj1bwyTpq9P0W8QoGYQ==",
-      "type": "package",
-      "path": "sqlitenetextensions/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.1/SQLiteNetExtensions.dll",
-        "lib/netstandard1.1/SQLiteNetExtensions.pdb",
-        "sqlitenetextensions.2.1.0.nupkg.sha512",
-        "sqlitenetextensions.nuspec",
-        "src/SQLiteNetExtensions/Attributes/CascadeOperation.cs",
-        "src/SQLiteNetExtensions/Attributes/ForeignKeyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/ManyToManyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/ManyToOneAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/OneToManyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/OneToOneAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/RelationshipAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/TextBlobAttribute.cs",
-        "src/SQLiteNetExtensions/Exceptions/IncorrectRelationshipException.cs",
-        "src/SQLiteNetExtensions/Extensions/ReadOperations.cs",
-        "src/SQLiteNetExtensions/Extensions/ReflectionExtensions.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/ITextBlobSerializer.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/Serializers/JsonBlobSerializer.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/TextBlobOperations.cs",
-        "src/SQLiteNetExtensions/Extensions/WriteOperations.cs",
-        "src/SQLiteNetExtensions/Properties/AssemblyInfo.cs"
       ]
     },
     "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -1110,6 +1246,41 @@
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -2237,6 +2408,9 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
+      "AWSSDK.CognitoIdentity >= 3.5.1.6",
+      "AWSSDK.Core >= 3.5.1.46",
+      "AWSSDK.DynamoDBv2 >= 3.5.4.5",
       "ITS440Proj >= 1.0.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.6.0.1141",
@@ -2285,6 +2459,18 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "AWSSDK.CognitoIdentity": {
+            "target": "Package",
+            "version": "[3.5.1.6, )"
+          },
+          "AWSSDK.Core": {
+            "target": "Package",
+            "version": "[3.5.1.46, )"
+          },
+          "AWSSDK.DynamoDBv2": {
+            "target": "Package",
+            "version": "[3.5.4.5, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"

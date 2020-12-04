@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace ITS440Proj
     {
         private bool Saved;
         private Recipe recipe;
+        private ObservableCollection<MVVM.ObservableItem> ingredients = new ObservableCollection<MVVM.ObservableItem>();
+        private ObservableCollection<string> instructions = new ObservableCollection<string>();
+        private string tags;
         /* TODO DEBUG
         public PageRecipeView()
         {
@@ -25,16 +29,31 @@ namespace ITS440Proj
             InitializeComponent();
 
             recipe = recipePass;
-            
+
+            // deserialize data
+            var ingdeblob = recipe.ingredientsBlobbed.Split('\n'); // array of foods ( FOOD\n )
+            foreach (var item in ingdeblob)
+            {
+                if (item != "")
+                {
+                    var temp = item.Split('@'); // array of item vars ( ID@Title@Quantity )
+                    var tempIng = new MVVM.ObservableItem { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]) };
+                    ingredients.Add(tempIng);
+                }
+            }
+            var insdeblob = recipe.instructionsBlobbed.Split('\n'); // array of instructions ( INSTRUCTION\n )
+            foreach (var item in insdeblob)
+            {
+                if (item != "") // if item exists change to remove maybe
+                    instructions.Add(item);
+            }
+            tags = recipe.tagsBlobbed; // can be a string with commas
+
             entryTitle.Text = recipe.title;
             entryYield.Text = recipe.yield;
-            if(recipe.tags != null) // checks if list has values in it
-                foreach (var tag in recipe.tags) // clean
-                {
-                    entryTags.Text += tag + ",";
-                }
-            listIng.ItemsSource = recipe.ingredients;
-            listIns.ItemsSource = recipe.instructions;
+            entryTags.Text = tags;
+            listIng.ItemsSource = ingredients;
+            listIns.ItemsSource = instructions;
             
             buttonSave.Clicked += async (sender, e) =>
             {
@@ -43,13 +62,19 @@ namespace ITS440Proj
                     recipe.title = entryTitle.Text;
                     recipe.yield = entryYield.Text;
                     var tags = entryTags.Text.Split(','); // splits tags and puts in array
-                    recipe.tags.Clear(); // clears to readd tags
-                    foreach (var tag in tags) // add tags to list
-                    {
-                        recipe.tags.Add(tag);
-                    }
                     // do ing
                     // do ins
+
+                    // serialize data \n shows new entry and @ shows new section
+                    recipe.ingredientsBlobbed = "";
+                    foreach (var food in ingredients)
+                        recipe.ingredientsBlobbed += food.Title + '@' + food.Quantity + '\n';
+                    recipe.instructionsBlobbed = "";
+                    foreach (var step in instructions)
+                    {
+                        recipe.instructionsBlobbed += step + '\n';
+                    }
+                    recipe.tagsBlobbed = entryTags.Text; // user can split using comma
 
                     await App.Recipedb.UpdateItemAsync(recipe);
 
@@ -66,7 +91,7 @@ namespace ITS440Proj
                 if(entryIng.Text != null && entryAmount.Text != null && pickerAmount.SelectedIndex != -1)
                 {
                     var ing = new MVVM.ObservableItem { Title = entryIng.Text, Description = "", Quantity = int.Parse(entryAmount.Text) }; // TODO maybe Food : ObservableItem
-                    recipe.ingredients.Add(ing);
+                    ingredients.Add(ing);
 
                     entryIng.Text = "";
                     entryAmount.Text = "";
@@ -78,7 +103,7 @@ namespace ITS440Proj
             {
                 if(entryIns.Text != null || entryIns.Text != "")
                 {
-                    recipe.instructions.Add(entryIns.Text);
+                    instructions.Add(entryIns.Text);
 
                     entryIns.Text = "";
                 }
@@ -120,9 +145,9 @@ namespace ITS440Proj
             var mi = ((MenuItem)sender);
             var oi = (MVVM.ObservableItem)mi.CommandParameter;
 
-            recipe.ingredients.Remove(oi);
+            ingredients.Remove(oi);
 
-            listIng.ItemsSource = recipe.ingredients;
+            listIng.ItemsSource = ingredients;
         }
 
         public void InsOnDelete(object sender, EventArgs e)
@@ -130,9 +155,9 @@ namespace ITS440Proj
             var mi = ((MenuItem)sender);
             var oi = (string)mi.CommandParameter;
 
-            recipe.instructions.Remove(oi);
+            instructions.Remove(oi);
 
-            listIns.ItemsSource = recipe.instructions;
+            listIns.ItemsSource = instructions;
         }
     }
 }

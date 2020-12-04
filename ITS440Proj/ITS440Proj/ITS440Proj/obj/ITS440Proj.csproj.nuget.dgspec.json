@@ -42,15 +42,23 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AWSSDK.CognitoIdentity": {
+              "target": "Package",
+              "version": "[3.5.1.6, )"
+            },
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.5.1.46, )"
+            },
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.5.4.5, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
-            },
-            "SQLiteNetExtensions": {
-              "target": "Package",
-              "version": "[2.1.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

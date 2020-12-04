@@ -3,11 +3,14 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "ITS440Proj.Android.dll" comes first in this list. */
 		"ITS440Proj.Android.dll",
+		"AWSSDK.CognitoIdentity.dll",
+		"AWSSDK.Core.dll",
+		"AWSSDK.DynamoDBv2.dll",
+		"AWSSDK.SecurityToken.dll",
 		"FormsViewGroup.dll",
 		"ITS440Proj.dll",
-		"Newtonsoft.Json.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"SQLite-net.dll",
-		"SQLiteNetExtensions.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",
 		"SQLitePCLRaw.lib.e_sqlite3.android.dll",
