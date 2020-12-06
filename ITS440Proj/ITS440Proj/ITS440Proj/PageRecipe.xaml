@@ -19,6 +19,7 @@
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
                                 <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
                                 <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="Add" />
+                                <MenuItem Clicked="OnUpload" CommandParameter="{Binding .}" Text="Upload" />
                             </ViewCell.ContextActions>
                             <Label x:Name="listRecipeTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
                         </ViewCell>

@@ -15,7 +15,7 @@ namespace ITS440Proj
     {
         private bool Saved;
         private Recipe recipe;
-        private ObservableCollection<MVVM.ObservableItem> ingredients = new ObservableCollection<MVVM.ObservableItem>();
+        private ObservableCollection<Food> ingredients = new ObservableCollection<Food>();
         private ObservableCollection<string> instructions = new ObservableCollection<string>();
         private string tags;
         /* TODO DEBUG
@@ -37,7 +37,7 @@ namespace ITS440Proj
                 if (item != "")
                 {
                     var temp = item.Split('@'); // array of item vars ( ID@Title@Quantity )
-                    var tempIng = new MVVM.ObservableItem { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]) };
+                    var tempIng = new Food { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]), Units = temp[2] };
                     ingredients.Add(tempIng);
                 }
             }
@@ -68,7 +68,7 @@ namespace ITS440Proj
                     // serialize data \n shows new entry and @ shows new section
                     recipe.ingredientsBlobbed = "";
                     foreach (var food in ingredients)
-                        recipe.ingredientsBlobbed += food.Title + '@' + food.Quantity + '\n';
+                        recipe.ingredientsBlobbed += food.Title + '@' + food.Quantity + '@' + food.Units + '\n';
                     recipe.instructionsBlobbed = "";
                     foreach (var step in instructions)
                     {
@@ -90,12 +90,15 @@ namespace ITS440Proj
             {
                 if(entryIng.Text != null && entryAmount.Text != null && pickerAmount.SelectedIndex != -1)
                 {
-                    var ing = new MVVM.ObservableItem { Title = entryIng.Text, Description = "", Quantity = int.Parse(entryAmount.Text) }; // TODO maybe Food : ObservableItem
-                    ingredients.Add(ing);
+                    if (!entryIng.Text.Contains('@') && !entryAmount.Text.Contains('@'))
+                    {
+                        var ing = new Food { Title = entryIng.Text, Description = "", Quantity = int.Parse(entryAmount.Text), Units = pickerAmount.SelectedItem.ToString() }; // TODO maybe Food : ObservableItem
+                        ingredients.Add(ing);
 
-                    entryIng.Text = "";
-                    entryAmount.Text = "";
-                    pickerAmount.SelectedIndex = -1;
+                        entryIng.Text = "";
+                        entryAmount.Text = "";
+                        pickerAmount.SelectedIndex = -1;
+                    }
                 }
             };
 
@@ -143,7 +146,7 @@ namespace ITS440Proj
         public void IngOnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            var oi = (MVVM.ObservableItem)mi.CommandParameter;
+            var oi = (Food)mi.CommandParameter;
 
             ingredients.Remove(oi);
 

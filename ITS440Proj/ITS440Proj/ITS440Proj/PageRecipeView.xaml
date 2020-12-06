@@ -28,7 +28,7 @@
                                 <Label Grid.Column="1" Text="{Binding Title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
                                 <Label Grid.Column="2" Text="{Binding Description}" HorizontalOptions="FillAndExpand" FontSize="Body" />
                                 <Label Grid.Column="3" Text="{Binding Quantity}" HorizontalOptions="FillAndExpand" FontSize="Body" />
-                                <Label Grid.Column="4" Text="{Binding Unit}" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="4" Text="{Binding Units}" HorizontalOptions="FillAndExpand" FontSize="Body" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

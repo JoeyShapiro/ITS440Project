@@ -8,6 +8,20 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entrySearch" Placeholder="Search" HorizontalOptions="FillAndExpand" />
+            <!-- list for Recipe list -->
+            <ListView x:Name="listData">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- each recipe in the list -->
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDownload" CommandParameter="{Binding .}" Text="Download" />
+                            </ViewCell.ContextActions>
+                            <Label x:Name="listDataTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

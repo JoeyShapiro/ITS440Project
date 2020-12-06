@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Amazon.DynamoDBv2.DataModel;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

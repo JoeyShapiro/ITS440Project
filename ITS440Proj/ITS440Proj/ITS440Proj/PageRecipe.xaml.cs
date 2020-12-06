@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -24,7 +26,7 @@ namespace ITS440Proj
 
             buttonAdd.Clicked += async (sender, e) =>
             {
-                recipe = new Recipe { title = "recipe", ingredientsBlobbed = "test@1\n", instructionsBlobbed = "test\n", tagsBlobbed = "", yield = "1" };
+                recipe = new Recipe { title = "recipe", ingredientsBlobbed = "test@1@Units\n", instructionsBlobbed = "test\n", tagsBlobbed = "", yield = "1" };
                 await App.Recipedb.InsertItemAsync(recipe); // creates a new row in the database
                 
                 await Navigation.PushAsync(new PageRecipeView(recipe));
@@ -95,6 +97,31 @@ namespace ITS440Proj
             }
 
             await DisplayAlert("Added To List", "The Ingredients for this recipe have been added to the shopping list.", "OK");
+        }
+
+        private async void OnUpload(object sender, EventArgs e) // put here so all it has to do is upload recipe rather than pack in view then send
+        {
+            var mi = ((MenuItem)sender);
+            var oi = (Recipe)mi.CommandParameter;
+
+            var credentials = new Amazon.CognitoIdentity.CognitoAWSCredentials("us-east-1:9f0203b1-af69-4b1b-a7bd-8f2f3248e309", Amazon.RegionEndpoint.USEast1);
+            var ddbClient = new Amazon.DynamoDBv2.AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USEast1);
+            DynamoDBContext context = new DynamoDBContext(ddbClient);
+
+            await context.SaveAsync(oi);
+            
+            //await ddbClient.UpdateItemAsync(new UpdateItemRequest
+            //{
+            //    TableName = "Recipes",
+            //    AttributeUpdates = new Dictionary<string, AttributeValueUpdate> 
+            //    {
+            //        { "title", new AttributeValueUpdate { Value = new AttributeValue { S = "title" } } },
+            //        { "yield", new AttributeValueUpdate { Value = new AttributeValue { S = "1" } } },
+            //        { "ingredientsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "test" } } },
+            //        { "instructionsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "test" } } },
+            //        { "tagsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "tset" } } }
+            //    }
+            //});
         }
     }
 }

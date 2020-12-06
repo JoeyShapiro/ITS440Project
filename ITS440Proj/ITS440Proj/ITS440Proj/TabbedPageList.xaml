@@ -6,5 +6,5 @@
   <!--Pages can be added as references or inline-->
     <local:PageShoppingList Title="List" />
     <local:PageRecipe Title="Recipes" />
-    <ContentPage Title="Discover" />
+    <local:PageDiscover Title="Discover" />
 </TabbedPage>
