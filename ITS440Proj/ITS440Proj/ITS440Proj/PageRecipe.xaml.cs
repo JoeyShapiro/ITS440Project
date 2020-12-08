@@ -29,7 +29,7 @@ namespace ITS440Proj
                 recipe = new Recipe { title = "recipe", ingredientsBlobbed = "test@1@Units\n", instructionsBlobbed = "test\n", tagsBlobbed = "", yield = "1" };
                 await App.Recipedb.InsertItemAsync(recipe); // creates a new row in the database
                 
-                await Navigation.PushAsync(new PageRecipeView(recipe));
+                await Navigation.PushAsync(new PageRecipeView(recipe, this));
 
                 updateList();
             };
@@ -49,7 +49,7 @@ namespace ITS440Proj
             };
         }
 
-        private void updateList()
+        public void updateList()
         {
             Task.Run(async () => // grab items from database
             {
@@ -76,7 +76,7 @@ namespace ITS440Proj
             var mi = ((MenuItem)sender); // cast to menu item
             var recipe = (Recipe)mi.CommandParameter; // cast to list item
 
-            await Navigation.PushAsync(new PageRecipeView(recipe));
+            await Navigation.PushAsync(new PageRecipeView(recipe, this));
         }
 
         public async void OnAdd(object sender, EventArgs e)
@@ -92,6 +92,7 @@ namespace ITS440Proj
                 {
                     var temp = item.Split('@'); // array of item vars ( Title@Quantity )
                     var tempIng = new MVVM.ObservableItem { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]), Got = false};
+                    tempIng.Quantity = convert2oz(tempIng.Quantity, temp[2]);
                     await App.Database.InsertItemAsync(tempIng);
                 }
             }
@@ -122,6 +123,34 @@ namespace ITS440Proj
             //        { "tagsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "tset" } } }
             //    }
             //});
+        }
+
+        public int convert2oz(int quantity, string units)
+        {
+            int ounces = 0;
+
+            if (units == "oz")
+            {
+                ounces = quantity;
+            }
+            else if (units == "lbs")
+            {
+                ounces = quantity * 16;
+            }
+            else if (units == "cups")
+            {
+                ounces = quantity * 8;
+            }
+            else if (units == "tsp")
+            {
+                ounces = quantity / 6;
+            }
+            else
+            {
+                ounces = quantity;
+            }
+
+            return ounces;
         }
     }
 }

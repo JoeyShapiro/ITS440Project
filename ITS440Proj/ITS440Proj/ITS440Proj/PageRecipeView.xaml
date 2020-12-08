@@ -5,7 +5,9 @@
              Title="View Recipe">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Recipe List!"
+                   FontSize="Large"
+                   TextColor="Red"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entryTitle" Placeholder="Recipe Name" HorizontalOptions="FillAndExpand" />
@@ -25,10 +27,10 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
-                                <Label Grid.Column="2" Text="{Binding Description}" HorizontalOptions="FillAndExpand" FontSize="Body" />
-                                <Label Grid.Column="3" Text="{Binding Quantity}" HorizontalOptions="FillAndExpand" FontSize="Body" />
-                                <Label Grid.Column="4" Text="{Binding Units}" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                                <Label Grid.Column="2" Text="{Binding Description}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="3" Text="{Binding Quantity}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="4" Text="{Binding Units}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -51,7 +53,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker> <!-- PLACE HOLDER FOR SELECTION -->
-                <Button x:Name="buttonAddIng" Text="+" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="buttonAddIng" Text="+" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="Red" BorderColor="Black" CornerRadius="5" />
             </StackLayout>
             <!-- list for Instructions list -->
             <ListView x:Name="listIns">
@@ -70,11 +72,11 @@
             <!-- grid for add ingredient -->
             <StackLayout Orientation="Horizontal">
                 <Entry x:Name="entryIns" Placeholder="Instruction Step" HorizontalOptions="FillAndExpand" />
-                <Button x:Name="buttonAddIns" Text="+" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="buttonAddIns" Text="+" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="Red" BorderColor="Black" CornerRadius="5" />
             </StackLayout>
             <Entry x:Name="entryYield" Placeholder="Yield" Keyboard="Numeric" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryTags" Placeholder="Search Tags" HorizontalOptions="FillAndExpand" />
-            <Button x:Name="buttonSave" Text="Save Recipe" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="buttonSave" Text="Save Recipe" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="Red" BorderColor="Black" CornerRadius="5" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

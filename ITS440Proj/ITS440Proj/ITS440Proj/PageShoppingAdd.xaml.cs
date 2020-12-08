@@ -14,6 +14,7 @@ namespace ITS440Proj
     {
         private bool Saved;
         private MVVM.ObservableItem item;
+        private PageShoppingList pageShoppingList;
         /* TODO DEBUG
         public PageShoppingAdd()
         {
@@ -21,11 +22,12 @@ namespace ITS440Proj
         }
         */
 
-        public PageShoppingAdd(MVVM.ObservableItem itemPass)
+        public PageShoppingAdd(MVVM.ObservableItem itemPass, PageShoppingList parentPage)
         {
             InitializeComponent();
 
             item = itemPass; // see if best way
+            pageShoppingList = parentPage;
 
             entryFood.Text = item.Title;
             entryDescription.Text = item.Description;
@@ -72,6 +74,8 @@ namespace ITS440Proj
                     await App.Database.UpdateItemAsync(item);
                 }
             }
+
+            pageShoppingList.updateList();
         }
 
         public int convert2oz(int quantity, string units)

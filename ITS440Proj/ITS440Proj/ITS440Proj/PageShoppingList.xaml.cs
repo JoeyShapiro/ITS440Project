@@ -30,7 +30,7 @@ namespace ITS440Proj
                 item = new MVVM.ObservableItem { Title = "Food", Description = "A test Food" , Quantity = 1, Got = false };
                 await App.Database.InsertItemAsync(item); // creates a new row in the database
 
-                await Navigation.PushAsync(new PageShoppingAdd(item));
+                await Navigation.PushAsync(new PageShoppingAdd(item, this));
 
                 updateList(); // updates list
             };
@@ -50,7 +50,7 @@ namespace ITS440Proj
             await DisplayAlert("Found", "Item has been found.", "OK");
         }
 
-        private void updateList()
+        public void updateList()
         {
             items = new MVVM.ListViewModel(); // grab items from database
             foodGet.Clear();
@@ -91,7 +91,7 @@ namespace ITS440Proj
             var mi = ((MenuItem)sender); // cast to menu item
             var item = (MVVM.ObservableItem)mi.CommandParameter; // cast to list item
 
-            await Navigation.PushAsync(new PageShoppingAdd(item));
+            await Navigation.PushAsync(new PageShoppingAdd(item, this));
         }
     }
 }

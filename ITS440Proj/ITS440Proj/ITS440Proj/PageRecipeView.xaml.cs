@@ -18,17 +18,19 @@ namespace ITS440Proj
         private ObservableCollection<Food> ingredients = new ObservableCollection<Food>();
         private ObservableCollection<string> instructions = new ObservableCollection<string>();
         private string tags;
+        private PageRecipe pageRecipe;
         /* TODO DEBUG
         public PageRecipeView()
         {
             InitializeComponent();
         }
         */
-        public PageRecipeView(Recipe recipePass)
+        public PageRecipeView(Recipe recipePass, PageRecipe parentPage)
         {
             InitializeComponent();
 
             recipe = recipePass;
+            pageRecipe = parentPage;
 
             // deserialize data
             var ingdeblob = recipe.ingredientsBlobbed.Split('\n'); // array of foods ( FOOD\n )
@@ -126,9 +128,20 @@ namespace ITS440Proj
                     {
                         recipe.title = entryTitle.Text;
                         recipe.yield = entryYield.Text;
-                        // do tags
-                        // do ing
-                        // do ins
+                        var tags = entryTags.Text.Split(','); // splits tags and puts in array
+                                                              // do ing
+                                                              // do ins
+
+                        // serialize data \n shows new entry and @ shows new section
+                        recipe.ingredientsBlobbed = "";
+                        foreach (var food in ingredients)
+                            recipe.ingredientsBlobbed += food.Title + '@' + food.Quantity + '@' + food.Units + '\n';
+                        recipe.instructionsBlobbed = "";
+                        foreach (var step in instructions)
+                        {
+                            recipe.instructionsBlobbed += step + '\n';
+                        }
+                        recipe.tagsBlobbed = entryTags.Text; // user can split using comma
 
                         await App.Recipedb.UpdateItemAsync(recipe);
 
@@ -141,6 +154,8 @@ namespace ITS440Proj
                     }
                 }
             }
+
+            pageRecipe.updateList();
         }
 
         public void IngOnDelete(object sender, EventArgs e)
