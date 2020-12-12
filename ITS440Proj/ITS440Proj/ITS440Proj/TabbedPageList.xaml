@@ -2,7 +2,9 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ITS440Proj"
             x:Class="ITS440Proj.TabbedPageList"
-            Title="ITS 440 Project">
+            Title="ITS 440 Project"
+            BarBackgroundColor="Orange"
+            BarTextColor="DarkRed">
   <!--Pages can be added as references or inline-->
     <local:PageShoppingList Title="List" />
     <local:PageRecipe Title="Recipes" />

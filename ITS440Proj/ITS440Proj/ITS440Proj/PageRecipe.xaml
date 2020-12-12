@@ -23,7 +23,7 @@
                                 <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="Add" />
                                 <MenuItem Clicked="OnUpload" CommandParameter="{Binding .}" Text="Upload" />
                             </ViewCell.ContextActions>
-                            <Label x:Name="listRecipeTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                            <Label x:Name="listRecipeTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" TextColor="DarkRed" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -93,7 +93,17 @@ namespace ITS440Proj
                     var temp = item.Split('@'); // array of item vars ( Title@Quantity )
                     var tempIng = new MVVM.ObservableItem { Title = temp[0], Description = "", Quantity = int.Parse(temp[1]), Got = false};
                     tempIng.Quantity = convert2oz(tempIng.Quantity, temp[2]);
-                    await App.Database.InsertItemAsync(tempIng);
+
+                    var items = await App.Database.GetItemsAsync();
+                    var listed = false;
+                    foreach (var f in items.Where(f => f.Title == tempIng.Title)) // if item appears in the list by title
+                    {
+                        f.Quantity += tempIng.Quantity; // update quantity with adding quantity of current item
+                        await App.Database.UpdateItemAsync(f); // readd item to database
+                        listed = true;
+                    }
+                    if(!listed) // if item is not in the list
+                        await App.Database.InsertItemAsync(tempIng);
                 }
             }
 

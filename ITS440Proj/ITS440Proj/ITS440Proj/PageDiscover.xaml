@@ -19,7 +19,7 @@
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="OnDownload" CommandParameter="{Binding .}" Text="Download" />
                             </ViewCell.ContextActions>
-                            <Label x:Name="listDataTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                            <Label x:Name="listDataTitle" Text="{Binding title}" HorizontalOptions="FillAndExpand" FontSize="Title" TextColor="DarkRed" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
