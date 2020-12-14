@@ -5,11 +5,6 @@
              Title="Edit Food">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Add to your Shopping List!"
-                   FontSize="Large"
-                   TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entryFood" Placeholder="Food Item" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryDescription" Placeholder="Description" HorizontalOptions="FillAndExpand" />
             <Entry x:Name="entryQuantity" Placeholder="Quantity" HorizontalOptions="FillAndExpand" />

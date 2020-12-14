@@ -4,12 +4,6 @@
              x:Class="ITS440Proj.PageDiscover">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Discover Recipes!"
-                   FontSize="Large"
-                   TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Entry x:Name="entrySearch" Placeholder="Search" HorizontalOptions="FillAndExpand" />
             <!-- list for Recipe list -->
             <ListView x:Name="listData">
                 <ListView.ItemTemplate>

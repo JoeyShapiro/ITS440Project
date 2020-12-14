@@ -20,11 +20,9 @@ namespace ITS440Proj
             InitializeComponent();
 
             fetchData();
-
-            listData.ItemsSource = Data;
         }
 
-        private void fetchData()
+        public void fetchData()
         {
             var credentials = new Amazon.CognitoIdentity.CognitoAWSCredentials("us-east-1:9f0203b1-af69-4b1b-a7bd-8f2f3248e309", Amazon.RegionEndpoint.USEast1);
             var ddbClient = new Amazon.DynamoDBv2.AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USEast1);
@@ -43,6 +41,8 @@ namespace ITS440Proj
                     Data.Add(tempRecipe);
                 }
             }).Wait();
+
+            listData.ItemsSource = Data;
         }
 
         private void OnDownload(object sender, EventArgs e)

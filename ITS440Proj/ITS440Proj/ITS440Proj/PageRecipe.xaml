@@ -4,13 +4,8 @@
              x:Class="ITS440Proj.PageRecipe">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Recipes!"
-                   FontSize="Large"
-                   TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entrySearch" Placeholder="Search" HorizontalOptions="FillAndExpand" />
-            <Button x:Name="buttonSearch" Text="Go" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="Red" BorderColor="Black" CornerRadius="5" />
+            <Button x:Name="buttonSearch" Text="Go" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="DarkRed" BorderColor="Black" CornerRadius="5" />
             <!-- list for Recipe list -->
             <ListView x:Name="listRecipes">
                 <ListView.ItemTemplate>
@@ -28,7 +23,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="buttonAdd" Text="Add Recipe" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="Red" BorderColor="Black" CornerRadius="5" />
+            <Button x:Name="buttonAdd" Text="Add Recipe" HorizontalOptions="FillAndExpand" BackgroundColor="Azure" BorderWidth="1" TextColor="DarkRed" BorderColor="Black" CornerRadius="5" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

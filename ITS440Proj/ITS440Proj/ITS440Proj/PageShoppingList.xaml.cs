@@ -39,7 +39,7 @@ namespace ITS440Proj
             {
                 item = (MVVM.ObservableItem)e.Item; // sets item to the tapped item
                 item.Got = !item.Got; // toggles if the item is gotten
-
+                
                 await App.Database.UpdateItemAsync(item); // update table with changed item
                 updateList(); // update list
             };

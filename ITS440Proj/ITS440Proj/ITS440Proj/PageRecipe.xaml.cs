@@ -120,19 +120,6 @@ namespace ITS440Proj
             DynamoDBContext context = new DynamoDBContext(ddbClient);
 
             await context.SaveAsync(oi);
-            
-            //await ddbClient.UpdateItemAsync(new UpdateItemRequest
-            //{
-            //    TableName = "Recipes",
-            //    AttributeUpdates = new Dictionary<string, AttributeValueUpdate> 
-            //    {
-            //        { "title", new AttributeValueUpdate { Value = new AttributeValue { S = "title" } } },
-            //        { "yield", new AttributeValueUpdate { Value = new AttributeValue { S = "1" } } },
-            //        { "ingredientsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "test" } } },
-            //        { "instructionsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "test" } } },
-            //        { "tagsBlobbed", new AttributeValueUpdate { Value = new AttributeValue { S = "tset" } } }
-            //    }
-            //});
         }
 
         public int convert2oz(int quantity, string units)

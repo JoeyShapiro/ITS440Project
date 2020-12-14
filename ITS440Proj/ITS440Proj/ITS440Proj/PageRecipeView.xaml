@@ -5,11 +5,6 @@
              Title="View Recipe">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Recipe List!"
-                   FontSize="Large"
-                   TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="entryTitle" Placeholder="Recipe Name" HorizontalOptions="FillAndExpand" />
             <!-- list for Ingredients list -->
             <ListView x:Name="listIng">
@@ -27,10 +22,10 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Title" />
-                                <Label Grid.Column="2" Text="{Binding Description}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
-                                <Label Grid.Column="3" Text="{Binding Quantity}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
-                                <Label Grid.Column="4" Text="{Binding Units}" TextColor="Red" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="DarkRed" HorizontalOptions="FillAndExpand" FontSize="Title" />
+                                <Label Grid.Column="2" Text="{Binding Description}" TextColor="DarkRed" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="3" Text="{Binding Quantity}" TextColor="DarkRed" HorizontalOptions="FillAndExpand" FontSize="Body" />
+                                <Label Grid.Column="4" Text="{Binding Units}" TextColor="DarkRed" HorizontalOptions="FillAndExpand" FontSize="Body" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
