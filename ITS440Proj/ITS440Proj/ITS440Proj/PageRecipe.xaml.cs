@@ -66,7 +66,7 @@ namespace ITS440Proj
             var oi = (Recipe)mi.CommandParameter; // cast to list item
 
             await App.Recipedb.DeleteItemAsync(oi.ID); // delete item
-            await DisplayAlert("Delete", oi.ID + " Deleted", "OK");
+            await DisplayAlert("Delete", oi.title + " Deleted", "OK");
 
             updateList(); // update list
         }

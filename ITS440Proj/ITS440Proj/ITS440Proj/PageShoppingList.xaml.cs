@@ -81,7 +81,7 @@ namespace ITS440Proj
             var oi = (MVVM.ObservableItem)mi.CommandParameter; // cast to list item
 
             await App.Database.DeleteItemAsync(oi.ID); // delete item
-            await DisplayAlert("Delete", oi.ID + " Deleted", "OK");
+            await DisplayAlert("Delete", oi.Title + " Deleted", "OK");
 
             updateList(); // update list
         }
